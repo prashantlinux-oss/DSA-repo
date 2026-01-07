@@ -57,118 +57,11 @@ int main()
 }
 
 
-Write a C program using function to check whether a number is prime. The function should take an integer as a parameter and return 1 if it is prime, otherwise 0. Use for loop inside the function. Print the result in the main function.
-
-#include <stdio.h>
-
-int isaPrime(int n)
-{
-    int i;
-    if(n <= 1)
-        return 0;
-
-    for(i = 2; i < n; i++)
-    {
-        if(n % i == 0)
-            return 0;
-    }
-    return 1;
-}
-
-int main()
-{
-    int n;
-    printf("Enter number: ");
-    scanf("%d", &n);
-
-    if(isaPrime(n))
-        printf("Prime number");
-    else
-        printf("Not prime number");
-
-    return 0;
-}
-
-Write a C program using function to find GCD (HCF) of two numbers. The function should take two integers as parameters and return the GCD. Use while loop inside the function. Print the result in the main function.
-
-#include <stdio.h>
-
-int gcd(int a, int b)
-{
-    while(a != b)
-    {
-        if(a > b)
-            a = a - b;
-        else
-            b = b - a;
-    }
-    return a;
-}
-
-int main()
-{
-    int a, b;
-    printf("Enter two numbers: ");
-    scanf("%d%d", &a, &b);
-
-    printf("GCD = %d", gcd(a, b));
-    return 0;
-}
-
-Write a C program using recursive function to find factorial of a number. The function should take an integer as a parameter and return its factorial. Call the function recursively. Print the result in the main function.
 
 
-#include <stdio.h>
-
-int factorial(int n)
-{
-    if(n == 0)
-        return 1;
-    else
-        return n * factorial(n - 1);
-}
-
-int main()
-{
-    int n;
-    printf("Enter number: ");
-    scanf("%d", &n);
-
-    printf("Factorial = %d", factorial(n));
-    return 0;
-}
 
 
-Write a C program using function to read and display elements of an array. The function should take the array and its size as parameters. Use for loop to read and display elements. Print the elements in the main function by calling this function.
 
-
-#include <stdio.h>
-
-void readDisplay(int a[], int n)
-{
-    int i;
-    printf("Enter array elements:\n");
-    for(i = 0; i < n; i++)
-    {
-        scanf("%d", &a[i]);
-    }
-
-    printf("Array elements are:\n");
-    for(i = 0; i < n; i++)
-    {
-        printf("%d ", a[i]);
-    }
-}
-
-int main()
-{
-    int a[50], n;
-    printf("Enter size of array: ");
-    scanf("%d", &n);
-
-    readDisplay(a, n);
-    return 0;
-}
 
 
 Write a C program using function to read and display elements of an array. The function should take the array and its size as parameters. Use while loop to read and display elements. Print the elements in the main function by calling this function.
@@ -202,7 +95,6 @@ int main()
     scanf("%d", &n);
 
     readDisplay(a, n);
-    return 0;
 }
 
 
@@ -250,7 +142,6 @@ int arraySum(int a[], int n)
     }
     return sum;
 }
-
 int main()
 {
     int a[50], n, i;
@@ -266,34 +157,6 @@ int main()
 }
 
 
-Write a C program using function to find the average of array elements. The function should take the array and its size as parameters and return the average as float. Use for loop inside the function. Print the average in the main function.
-
-
-#include <stdio.h>
-
-float average(int a[], int n)
-{
-    int i, sum = 0;
-    for(i = 0; i < n; i++)
-    {
-        sum = sum + a[i];
-    }
-    return (float)sum / n;
-}
-
-int main()
-{
-    int a[50], n, i;
-    printf("Enter size of array: ");
-    scanf("%d", &n);
-
-    printf("Enter elements:\n");
-    for(i = 0; i < n; i++)
-        scanf("%d", &a[i]);
-
-    printf("Average = %.2f", average(a, n));
-    return 0;
-}
 
 
 
@@ -313,8 +176,6 @@ int sumDivBy3(int a[], int n)
     }
     return sum;
 }
-
-int main()
 {
     int a[50], n, i;
     printf("Enter size of array: ");
@@ -363,41 +224,7 @@ int main()
     return 0;
 }
 
-13. Write a C program using function to count positive, negative, and zero elements in an array. The function should take the array and its size as parameters and return three values (positive, negative, zero counts using pointers or struct). Use for loop and if-else conditions inside the function. Print the counts in the main function.
 
-
-#include <stdio.h>
-
-void countPNZ(int a[], int n, int *p, int *ne, int *z)
-{
-    int i;
-    *p = *ne = *z = 0;
-
-    for(i = 0; i < n; i++)
-    {
-        if(a[i] > 0)
-            (*p)++;
-        else if(a[i] < 0)
-            (*ne)++;
-        else
-            (*z)++;
-    }
-}
-
-int main()
-{
-    int a[50], n, i, p, ne, z;
-    printf("Enter size of array: ");
-    scanf("%d", &n);
-
-    printf("Enter elements:\n");
-    for(i = 0; i < n; i++)
-        scanf("%d", &a[i]);
-
-    countPNZ(a, n, &p, &ne, &z);
-    printf("Positive = %d\nNegative = %d\nZero = %d", p, ne, z);
-    return 0;
-}
 
 14. Write a C program to check whether an element is present in an array. The program should take an array, its size, and the element to search as input. Use for loop to check the presence of the element. Display an appropriate message in the main function indicating whether the element is present or not.
 
@@ -470,7 +297,6 @@ int main()
     scanf("%d", &key);
 
     searchElement(a, n, key);
-    return 0;
 }
 
 16. Write a C program using function to count even numbers in an array. The function should take the array and its size as parameters and return the count of even numbers. Use for loop and if condition inside the function. If no even number exists, display a proper message in the main function.
@@ -531,7 +357,35 @@ int main()
     printf("Enter size of array: ");
     scanf("%d", &n);
 
+    printf("Enter elements:\n");17. Write a C program using function to find the maximum element in an array. The function should take the array and its size as parameters and return the maximum element. Use for loop inside the function. Print the maximum element in the main function.
+
+
+#include <stdio.h>
+
+int findMax(int a[], int n)
+{
+    int i, max = a[0];
+    for(i = 1; i < n; i++)
+    {
+        if(a[i] > max)
+            max = a[i];
+    }
+    return max;
+}
+
+int main()
+{
+    int a[50], n, i;
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
     printf("Enter elements:\n");
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    printf("Maximum = %d", findMax(a, n));
+    return 0;
+}
     for(i = 0; i < n; i++)
         scanf("%d", &a[i]);
 
